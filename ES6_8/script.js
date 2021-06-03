@@ -1,44 +1,16 @@
 'use strict';
- // class это крассивая обвёртка функций конструкторов
+ // npm install eslint --save-dev
+// npx eslint --init
+// анкета с видео
+//npm install eslint-plugin-babel --save-dev
+// npm install eslint-plugin-react --save-dev
+//PowerShell от имени администратора -> Set-ExecutionPolicy unrestricted -> Y
+//     (eslint ES6_8/script.js)  проверка файла на ошибки
+let a = 1;
+// function foot (name) {
+    var lastName=name
+};
 
-class Rectangle {
-    constructor(heihht, width) {
-        this.heihht = heihht;
-        this.width = width;
-    }
+var x = 200
 
-    calcArea() {
-        return this.heihht * this.width;
-    }
-}
-
-const square = new Rectangle(10,10);
-const long = new Rectangle(20,100);
-
-
-console.log(square.calcArea());
-console.log(long.calcArea());
-
-//===========================
-// Наледование классов
-// ColorRectangleWithText наследуется от Rectangl
-class ColorRectangleWithText extends Rectangle {
-    constructor(heihht, width, text, bgColor) {
-        super(heihht, width); // вызывает то что есть у родителя
-        this.text = text;
-        this.bgColor = bgColor;
-    }
-
-    showMyProps() {
-        console.log(`Текст: ${this.text}, цвет: ${this.bgColor}`);
-
-    }
-}
-
-const div = new ColorRectangleWithText(25, 10, 'Hello', 'red');
-
-
-div.showMyProps();
-console.log(div.calcArea());
-
-
+console.log(a)
