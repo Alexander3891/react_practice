@@ -7,7 +7,7 @@
 //PowerShell от имени администратора -> Set-ExecutionPolicy unrestricted -> Y
 //     (eslint ES6_8/script.js)  проверка файла на ошибки
 let a = 1;
-// function foot (name) {
+function foot (name) {
     var lastName=name
 };
 
