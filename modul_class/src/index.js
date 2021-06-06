@@ -35,3 +35,8 @@ someSlider.play()
 // create babel.config.js
 // npx babel src --out-dir src 
 // npx webpack
+
+// ===============  React ====================
+// npx create-react-app my-app
+// cd my-app
+// npm start
