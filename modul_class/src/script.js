@@ -1,6 +1,6 @@
-// 'use strict';
+'use strict';
 
-function button(){
+function button() {
     return 'button';
 }
 
@@ -20,7 +20,6 @@ class Slider{
         console.log(this.width, this.height, this.count);
     }
 }
-
 //------------------new class AutoSlider ------------------
 
 class AutoSlider extends Slider{
@@ -32,6 +31,6 @@ class AutoSlider extends Slider{
         console.log(`Atoplay: ${this.auto}`);
     }
 
-}
-export{button,Slider, AutoSlider};
-
+    }
+export {Slider};
+export {AutoSlider};
