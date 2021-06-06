@@ -28,3 +28,10 @@ someSlider.play()
 // webpack.config.js
 // npm install webpack webpack-cli --save-dev
 // npx webpack
+
+          //======== babel ======
+//npm install --save-dev @babel/core @babel/cli @babel/preset-env
+// npm install --save @babel/polyfill
+// create babel.config.js
+// npx babel src --out-dir src 
+// npx webpack
