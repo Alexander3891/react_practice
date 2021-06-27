@@ -1,5 +1,10 @@
 import React from 'react';
 
+// import About from './About';
+// import Contacts from './Contacts';
+// import Other from './Other';
+
+
 class Nav extends React.Component {
     constructor(props){
         super(props);
@@ -32,6 +37,26 @@ class Nav extends React.Component {
      }
      let nav3 = this.props.nav2;
     return (
+      // npm install react-router
+      // npm install react-router-dom
+<div>
+          {/* <Router>
+           <div className="ty">
+             <ul>
+               <li><a href="/">Main page</a></li>
+               <li><a href="/about">About</a></li>
+               <li><a href="/contacts">Contacts</a></li>
+             </ul>
+             <Switch>
+               <Route exact path="/" component={Home}/>
+               <Route exact path="/about" component={About}/>
+               <Route exact path="/contacts" component={Contacts}/>
+               <Route component={Other}/>
+             </Switch>
+           </div>
+         </Router> */}
+
+
          <nav>
              <button type="button" onClick={this.showNaw}>Show menu</button>
              <h1>{this.state.title}</h1>
@@ -50,6 +75,7 @@ class Nav extends React.Component {
                 })} 
             </ul>
         </nav>
+    </div>
     );   
   }
 }
