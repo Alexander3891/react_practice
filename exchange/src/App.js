@@ -102,7 +102,7 @@ class App extends React.Component {
         <div className="container">
             <div className="flex-container">
                 <div className="flex-item">
-                    <h1 className="footer-title"><a href="http://google.com">Курсы валют</a></h1>
+                    <h1 className="footer-title"><a href="http://google.com">2021 React</a></h1>
                     <p>All Rights Reserved</p>
                 </div>
                <div className="flex-item">
