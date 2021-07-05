@@ -6,7 +6,7 @@ class Rate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-        'date': '30-12-2020',
+            'date': new Date().toLocaleString(),
             'USD': '',
             'EUR': '',
             'RUR': '',
@@ -26,7 +26,6 @@ class Rate extends React.Component {
                 return data.json();
             })
             .then(data => {
-                console.log(data);
                 this.setState({ USD: data[0].ccy })
                 this.setState({EUR: data[1].ccy})
                 this.setState({RUR: data[2].ccy})
@@ -37,29 +36,28 @@ class Rate extends React.Component {
                 this.setState({EUR_sale: data[1].sale})
                 this.setState({RUR_sale: data[2].sale})
             })
+            
     }
     render() {
         return (
             <div className="rate">
                 <h3>Курс валют на {this.state.date}</h3>
-        <div className="flex-container">
-            <div className=" block flex-item">
+                
+            <div className="flex-container">
+                <div className=" block flex-item">
                         <div className="currency-name">{this.state.USD}</div>
-                        <div className="currency-in">{this.state.USD_buy}</div>
-                <div className="currency-out">{this.state.USD_sale}</div>
+                        <div className="currency-in"><span className="currency-text">Покупка: </span>{Number(this.state.USD_buy).toFixed(2)} грн</div>
+                        <div className="currency-out"><span className="currency-text">Продажа: </span>{Number(this.state.USD_sale).toFixed(2)} грн</div>
             </div>
-            {/* <div className=" block flex-item">
-                <div className="currency-out">1200Кг</div>
-            </div> */}
             <div className=" block flex-item">
                 <div className="currency-name">{this.state.EUR}</div>
-                <div className="currency-in">{this.state.EUR_buy}</div>
-                <div className="currency-out">{this.state.EUR_sale}</div>
+                <div className="currency-in"><span className="currency-text">Покупка: </span> {Number(this.state.EUR_buy).toFixed(2)} грн</div>
+                <div className="currency-out"><span className="currency-text">Продажа: </span>{Number(this.state.EUR_sale).toFixed(2)} грн</div>
             </div>
             <div className=" block flex-item">
                 <div className="currency-name">{this.state.RUR}</div>
-                <div className="currency-in">{this.state.RUR_buy}</div>
-                <div className="currency-out">{this.state.RUR_buy}</div>
+                <div className="currency-in"><span className="currency-text">Покупка: </span>{Number(this.state.RUR_buy).toFixed(2)} грн</div>
+                <div className="currency-out"><span className="currency-text">Продажа: </span>{Number(this.state.RUR_buy).toFixed(2)} грн</div>
             </div>
                 </div>
                 </div>
