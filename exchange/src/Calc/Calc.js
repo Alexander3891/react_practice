@@ -52,7 +52,7 @@ class Calc extends React.Component {
             <div>
                 <h4>Результат</h4>
                 <ul className="calc-res">
-                            <li>EUR {(this.state.result).toFixed(0)}</li>
+                            <li>EUR {(this.state.result).toFixed(1)}</li>
                 </ul>
             </div>
         </div>

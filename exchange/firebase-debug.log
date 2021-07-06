@@ -1,0 +1,72 @@
+[debug] [2021-07-06T12:37:40.206Z] ----------------------------------------------------------------------
+[debug] [2021-07-06T12:37:40.210Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Alexander\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-07-06T12:37:40.211Z] CLI Version:   9.14.0
+[debug] [2021-07-06T12:37:40.211Z] Platform:      win32
+[debug] [2021-07-06T12:37:40.211Z] Node Version:  v14.16.0
+[debug] [2021-07-06T12:37:40.213Z] Time:          Tue Jul 06 2021 15:37:40 GMT+0300 (Восточная Европа, летнее время)
+[debug] [2021-07-06T12:37:40.213Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-06T12:37:40.224Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-06T12:37:40.225Z] > authorizing via signed-in user (sanichen350@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Programming\project_2\react_practice\exchange
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-07-06T12:38:19.666Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-07-06T12:38:20.170Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-07-06T12:38:20.170Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project exchange-197e6 (exchange) 
+[info] 
+=== Hosting:github Setup
+[info] 
+[info] i  Detected a .git folder at D:\Programming\project_2\react_practice\exchange 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=281121622&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2021-07-06T12:39:09.676Z] >>> HTTP REQUEST POST https://github.com/login/oauth/access_token  
+ {"client_id":"89cf50f02ac6aaed3484","client_secret":"3330d14abc895d9a74d5f17cd7a00711fa2c5bf0","code":"8682e5e5d5f0774f0247","redirect_uri":"http://localhost:9005","state":"281121622"}
+[debug] [2021-07-06T12:39:10.462Z] <<< HTTP RESPONSE 200 {"server":"GitHub.com","date":"Tue, 06 Jul 2021 12:39:12 GMT","content-type":"application/json; charset=utf-8","transfer-encoding":"chunked","vary":"X-PJAX, Accept-Encoding, Accept, X-Requested-With","permissions-policy":"interest-cohort=()","etag":"W/\"a344c911779987e0e77369eaf9ef815a\"","cache-control":"max-age=0, private, must-revalidate","strict-transport-security":"max-age=31536000; includeSubdomains; preload","x-frame-options":"deny","x-content-type-options":"nosniff","x-xss-protection":"0","referrer-policy":"origin-when-cross-origin, strict-origin-when-cross-origin","expect-ct":"max-age=2592000, report-uri=\"https://api.github.com/_private/browser/errors\"","content-security-policy":"default-src 'none'; base-uri 'self'; block-all-mixed-content; connect-src 'self' uploads.github.com www.githubstatus.com collector.githubapp.com api.github.com github-cloud.s3.amazonaws.com github-production-repository-file-5c1aeb.s3.amazonaws.com github-production-upload-manifest-file-7fdce7.s3.amazonaws.com github-production-user-asset-6210df.s3.amazonaws.com cdn.optimizely.com logx.optimizely.com/v1/events translator.github.com wss://alive.github.com; font-src github.githubassets.com; form-action 'self' github.com gist.github.com; frame-ancestors 'none'; frame-src render.githubusercontent.com render-temp.githubusercontent.com viewscreen.githubusercontent.com; img-src 'self' data: github.githubassets.com identicons.github.com collector.githubapp.com github-cloud.s3.amazonaws.com secured-user-images.githubusercontent.com/ *.githubusercontent.com; manifest-src 'self'; media-src 'none'; script-src github.githubassets.com; style-src 'unsafe-inline' github.githubassets.com; worker-src github.com/socket-worker-3f088aa2.js gist.github.com/socket-worker-3f088aa2.js","x-github-request-id":"0B24:CE91:90843F:9633AE:60E44EEF"}
+[debug] [2021-07-06T12:39:10.469Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2021-07-06T12:39:10.796Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2021-07-06T12:39:10.797Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"Alexander3891","id":62648298,"node_id":"MDQ6VXNlcjYyNjQ4Mjk4","avatar_url":"https://avatars.githubusercontent.com/u/62648298?v=4","gravatar_id":"","url":"https://api.github.com/users/Alexander3891","html_url":"https://github.com/Alexander3891","followers_url":"https://api.github.com/users/Alexander3891/followers","following_url":"https://api.github.com/users/Alexander3891/following{/other_user}","gists_url":"https://api.github.com/users/Alexander3891/gists{/gist_id}","starred_url":"https://api.github.com/users/Alexander3891/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Alexander3891/subscriptions","organizations_url":"https://api.github.com/users/Alexander3891/orgs","repos_url":"https://api.github.com/users/Alexander3891/repos","events_url":"https://api.github.com/users/Alexander3891/events{/privacy}","received_events_url":"https://api.github.com/users/Alexander3891/received_events","type":"User","site_admin":false,"name":"Alexander Skrypnyk ","company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":9,"public_gists":0,"followers":1,"following":0,"created_at":"2020-03-25T11:04:48Z","updated_at":"2021-07-06T12:39:11Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":28707,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as Alexander3891 
+[info] 
+[debug] [2021-07-06T12:39:39.163Z] >>> [apiv2][query] GET https://api.github.com/repos/u/actions/secrets/public-key type=owner
+[debug] [2021-07-06T12:39:39.561Z] <<< [apiv2][status] GET https://api.github.com/repos/u/actions/secrets/public-key 404
+[debug] [2021-07-06T12:39:39.562Z] <<< [apiv2][body] GET https://api.github.com/repos/u/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-06T12:39:49.690Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-06T12:39:50.003Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-06T12:39:50.003Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-06T12:39:51.359Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-06T12:39:51.600Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-06T12:39:51.655Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-06T12:39:51.656Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-06T12:39:51.770Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-06T12:39:51.872Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-06T12:39:51.872Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-06T12:39:51.935Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2021-07-06T12:39:52.072Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-06T12:39:52.072Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-06T12:39:52.275Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2021-07-06T12:39:52.275Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
+[debug] [2021-07-06T12:43:24.716Z] >>> [apiv2][query] GET https://api.github.com/repos/firebase init/actions/secrets/public-key type=owner
+[debug] [2021-07-06T12:43:25.101Z] <<< [apiv2][status] GET https://api.github.com/repos/firebase init/actions/secrets/public-key 404
+[debug] [2021-07-06T12:43:25.101Z] <<< [apiv2][body] GET https://api.github.com/repos/firebase init/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest"}
