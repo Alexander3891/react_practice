@@ -45,8 +45,8 @@ class Rate extends React.Component {
         <div className="flex-container">
             <div className=" block flex-item">
                         <div className="currency-name">{this.state.USD}</div>
-                        <div className="currency-in">{this.state.USD_buy}</div>
-                <div className="currency-out">{this.state.USD_sale}</div>
+                        <div className="currency-in">Продажа: {this.state.USD_buy.toFixed(2)} грн</div>
+                <div className="currency-out">Покупка: {this.state.USD_sale.toFixed(2)} грн</div>
             </div>
             {/* <div className=" block flex-item">
                 <div className="currency-out">1200Кг</div>
