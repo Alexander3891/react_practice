@@ -44,6 +44,7 @@ class Rate extends React.Component {
                         <div className="currency-name">{keyName}</div>
                         <div className="currency-in">{Number(this.state.currencyRate[keyName]).toFixed(2)}</div>
                         <p>* Можно купить за 1 EUR</p>
+                               
                         
             </div>
                 )
