@@ -1,0 +1,266 @@
+.header{
+    position: relative;
+    width: 1440px;
+    height: 80px;
+    margin: 0 auto;
+    background: #FFFFFF;
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+
+    }
+.logo{
+position: absolute;
+width: 112px;
+height: 28px;
+left: 121px;
+top: 26px; 
+
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+
+color: #000000;    
+}
+
+.search{
+position: absolute;
+width: 216px;
+height: 33px;
+left: 882px;
+top: 23px;
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 43px;
+padding-left: 18px;
+}
+.search::placeholder {
+padding-left: 25px;
+margin-top: 8px;
+background: url(./image/header_vector.png) no-repeat;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+text-align: left;
+color: #000000;
+}
+.basket{
+position: absolute;
+width: 131px;
+height: 46px;
+left: 1121px;
+top: 16px;
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 45px;
+background: url(./image/header_basket.png) 21.78px 7px no-repeat;
+
+}
+.basket_container{
+    position: relative;
+}
+.basket_quantity{
+position: absolute;
+left: 38px;
+top: 20px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+text-align: center;
+background:#3588E9;;
+color: #FFFFFF;
+border: 1px solid #3588E9;;
+border-radius: 100%;
+width: 18px;
+height: 18px;
+}
+.basket_sum{
+padding-left: 5px;
+position: absolute;
+left: 57px;
+top: 13px;
+width: 52px;
+height: 21px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 21px;
+}
+.language_name{
+    margin-right: 33px;
+position: absolute;
+width: 21px;
+height: 19px;
+left: 1285px;
+top: 31px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+color: #000000;
+}
+.language_select{
+position: absolute;
+left: 91.5%;
+right: 0%;
+top: 45%;
+bottom: 0%;
+
+background: #000000;
+background: url(./image/header_select.png) no-repeat;
+
+}
+
+
+/* ============== @media ================ */
+
+@media (max-width: 768px){
+.header{
+    position: relative;
+    width: 800px;
+    height: 80px;
+    margin: 0 auto;
+    background: #FFFFFF;
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+
+    }
+.logo{
+position: absolute;
+width: 112px;
+height: 28px;
+left: 30px;
+top: 26px; 
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+color: #000000;    
+}
+
+.search{
+position: absolute;
+width: 250px;
+height: 33px;
+left: 200px;
+top: 23px;
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 43px;
+padding-left: 18px;
+}
+
+.basket{
+
+position: absolute;
+width: 131px;
+height: 46px;
+left: 464px;
+top: 16px;
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 45px;
+background: url(./image/header_basket.png) 21.78px 7px no-repeat;
+
+}
+
+.language_name{
+    margin-right: 33px;
+position: absolute;
+width: 21px;
+height: 19px;
+left: 614px;
+top: 31px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+color: #000000;
+}
+.language_select{
+position: absolute;
+left: 80.5%;
+right: 0%;
+top: 45%;
+bottom: 0%;
+
+background: #000000;
+background: url(./image/header_select.png) no-repeat;
+}
+}
+/* ================================== */
+@media (max-width: 576px){
+.header{
+    display: flex;
+    width: 370px;
+    height: 300px;
+    margin: 0 auto;
+    background: #FFFFFF;
+     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+
+    }
+.logo{
+flex: 1 100%;
+	/* min-width: 200px;	 */
+    font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+color: #000000;    
+}
+
+.search{
+flex: 1 100%;
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 43px;
+padding-left: 18px;
+}
+
+.basket{
+flex: 1 100%;
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 45px;
+background: url(./image/header_basket.png) 21.78px 7px no-repeat;
+
+}
+
+.language_name{
+    flex: 1 100%;
+    margin-right: 33px;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 19px;
+text-align: center;
+color: #000000;
+}
+.language_select{
+flex: 1 100%;
+background: #000000;
+background: url(./image/header_select.png) no-repeat;
+}
+}
