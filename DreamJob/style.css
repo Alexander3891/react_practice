@@ -194,7 +194,111 @@ color: #000000;
    line-height: 19px;
    text-align: center;
    color: #FFFFFF;
+
 }
+.main_cart_slider{
+    display: flex;
+}
+
+.main_cart_slider_foto{
+    border: 1px solid #000;
+    width: 189px;
+    height: 180px;
+
+}
+.main_cart_slider_foto_1{
+    background: url(../DreamJob/image/slider_kedy2.png) no-repeat;
+    display: block;
+    width: 100px;
+    height: 50px;
+    margin: 0px 0px 0px 0px;
+
+}
+.main_cart_slider_foto_2{
+    background: url(../DreamJob/image/slider_obuv_1.png) no-repeat;
+    display: block;
+    width: 100px;
+    height: 50px;
+
+}
+.main_cart_slider_foto_3{
+    background: url(../DreamJob/image/slider_muzhskiye-tufli.png) no-repeat;
+    display: block;
+    width: 100px;
+    height: 50px;
+
+}
+
+                        /* slider */
+    .main_row4_slaider_row{
+    /* border: 1px solid #000; */
+    margin-right: 23px;
+    width: 189px;
+    height: 118px;
+    }
+    .main_row4_slaider_collum1{
+    display: block;
+    width: 180px;
+    height: 150px;
+    background: url(../DreamJob/image/slidr_kedy.png) no-repeat;
+    margin: 60px 23px 0px 0px;
+    }
+    .main_row4_slaider_collum12{
+    display: block;
+    width: 180px;
+    height: 150px;
+    background: url(../DreamJob/image/slidr_kedy.png) no-repeat;
+    margin: 60px 23px 0px 0px;
+
+    }
+    .main_row4_slaider_collum13{
+    display: block;
+    width: 180px;
+    height: 150px;
+    background: url(../DreamJob/image/slidr_kedy.png) no-repeat;
+    margin: 60px 23px 0px 0px;
+    }
+    
+    .mySlides {
+        display: none;
+    /* border: 1px solid #000; */
+    width: 175px;
+      }
+      
+      /* Точки/пули/индикаторы */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      
+      .active, .dot:hover {
+        background-color: #717171;
+      }
+      
+      /* Исчезающая анимация */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+      
+      @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+      }
+      
+      @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+      }
+
 /* ============== @media ================ */
 
 @media (max-width: 1100px){
