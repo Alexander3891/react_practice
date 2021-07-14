@@ -60,6 +60,35 @@ function showSlides2(n) {
   slides2[slideIndex2-1].style.display = "block";
   dots2[slideIndex2-1].className += " active";
 }
+//========== slider 3 ==================
+let slideIndex3 = 1;
+showSlides3(slideIndex3);
+
+// Вперед/назад элементы управления
+function plusSlides3(n) {
+  showSlides3(slideIndex3 += n);
+}
+
+// Элементы управления миниатюрами изображений
+function currentSlide3(n) {
+  showSlides3(slideIndex3 = n);
+}
+
+function showSlides3(n) {
+  let k;
+  let slides3 = document.getElementsByClassName("mySlides3");
+  let dots3 = document.getElementsByClassName("dot3");
+  if (n > slides3.length) {slideIndex3 = 1}
+  if (n < 1) {slideIndex3 = slides3.length}
+  for (k = 0; k < slides3.length; k++) {
+      slides3[k].style.display = "none";
+  }
+  for (k = 0; k < dots3.length; k++) {
+      dots3[k].className = dots3[k].className.replace(" active", "");
+  }
+  slides3[slideIndex3-1].style.display = "block";
+  dots3[slideIndex3-1].className += " active";
+}
 //  ============= hover price at cart ================
   let a = document.querySelector('.main_cart_price_price_2');
   //вешаем на него события
@@ -70,3 +99,17 @@ a.onmouseover = function (e) {
 a.onmouseout = function (e) {
     document.querySelector('.main_cart_price_price_2_less').style.display = 'none';
 }
+// ========= button pay =============
+
+const btns = document.querySelectorAll(".main_cart_button");
+    const hoverClass = "main_cart_button_hover";
+
+    btns.forEach(item => {
+        item.addEventListener("mouseover", function () {
+            this.classList.add(hoverClass);
+        });
+
+        item.addEventListener("mouseout", function () {
+            this.classList.remove(hoverClass);
+        });
+    });

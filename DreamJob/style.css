@@ -176,8 +176,7 @@ color: #000000;
 }
 
 .main_cart_price_price_2{
-        cursor: pointer;
-
+cursor: pointer;
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
@@ -216,7 +215,25 @@ display: none;
    line-height: 19px;
    text-align: center;
    color: #FFFFFF;
-
+   cursor: pointer;
+}
+.main_cart_button_hover{
+ position: absolute;
+    width: 233px;
+    height: 47px;
+    left: 23px;
+    top: 330px;
+    background: #FFFFFF;
+    border: 1px solid #1D1D1B;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-family: Roboto;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 16px;
+   line-height: 19px;
+   text-align: center;
+   color: #070101;
 }
 .main_cart_slider{
     display: flex;
@@ -322,6 +339,23 @@ border-radius: 4px;
       
       /* Точки/пули/индикаторы */
       .dot2 {
+        cursor: pointer;
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+        background-color:#E0E0E0;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      .mySlides3 {
+        display: none;
+    /* border: 1px solid #000; */
+    width: 175px;
+      }
+      
+      /* Точки/пули/индикаторы */
+      .dot3 {
         cursor: pointer;
         height: 10px;
         width: 10px;
