@@ -101,15 +101,29 @@ a.onmouseout = function (e) {
 }
 // ========= button pay =============
 
+// const btns = document.querySelectorAll(".main_cart_button");
+//     const hoverClass = "main_cart_button_hover";
+
+//     btns.forEach(item => {
+//         item.addEventListener("mouseover", function () {
+//             this.classList.add(hoverClass);
+//         });
+
+//         item.addEventListener("mouseout", function () {
+//             this.classList.remove(hoverClass);
+//         });
+//     });
+
+
 const btns = document.querySelectorAll(".main_cart_button");
     const hoverClass = "main_cart_button_hover";
 
     btns.forEach(item => {
-        item.addEventListener("mouseover", function () {
-            this.classList.add(hoverClass);
+        item.addEventListener("mouseover", function (e) {
+            e.target.classList.add(hoverClass);
         });
 
-        item.addEventListener("mouseout", function () {
-            this.classList.remove(hoverClass);
+        item.addEventListener("mouseout", function (e) {
+            e.target.classList.remove(hoverClass);
         });
     });
