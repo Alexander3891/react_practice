@@ -99,31 +99,52 @@ a.onmouseover = function (e) {
 a.onmouseout = function (e) {
     document.querySelector('.main_cart_price_price_2_less').style.display = 'none';
 }
-// ========= button pay =============
+// ========= button =============
+
+const btns = document.querySelectorAll(".main_cart_button");
+    const hoverClass = "main_cart_button_hover",
+          hoverClass2 = "main_cart_button_hover2";
+
+    btns.forEach(item => {
+          // ========= button hover =============
+        item.addEventListener("mouseover", function () {
+          this.classList.add(hoverClass);
+        });
+
+        item.addEventListener("mouseout", function () {
+            this.classList.remove(hoverClass);
+        });
+          // ========= button click =============
+          item.addEventListener("click", function () {
+            this.classList.add(hoverClass2);
+            this.innerHTML =  `
+                    <div class="main_cart_button_buy">
+                       <div class="main_cart_button_buy_calc">
+                           <div class="main_cart_button_buy_calc_add"><img src="" alt=""></div>
+                           <div class="main_cart_button_buy_calc_sum">1шт.</div>
+                           <div class="main_cart_button_buy_calc_delete"><img src="" alt=""></div>
+                       </div>
+                       <div class="main_cart_button_buy_button">Оформить</div>
+                    </div>
+  
+          `;  
+
+        });
+    });
+
+   
+ 
+
 
 // const btns = document.querySelectorAll(".main_cart_button");
 //     const hoverClass = "main_cart_button_hover";
 
 //     btns.forEach(item => {
-//         item.addEventListener("mouseover", function () {
-//             this.classList.add(hoverClass);
+//         item.addEventListener("mouseover", function (e) {
+//             e.target.classList.add(hoverClass);
 //         });
 
-//         item.addEventListener("mouseout", function () {
-//             this.classList.remove(hoverClass);
+//         item.addEventListener("mouseout", function (e) {
+//             e.target.classList.remove(hoverClass);
 //         });
 //     });
-
-
-const btns = document.querySelectorAll(".main_cart_button");
-    const hoverClass = "main_cart_button_hover";
-
-    btns.forEach(item => {
-        item.addEventListener("mouseover", function (e) {
-            e.target.classList.add(hoverClass);
-        });
-
-        item.addEventListener("mouseout", function (e) {
-            e.target.classList.remove(hoverClass);
-        });
-    });

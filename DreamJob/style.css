@@ -235,6 +235,75 @@ display: none;
    text-align: center;
    color: #070101;
 }
+.main_cart_button_hover2{
+    position: absolute;
+       width: 233px;
+       height: 47px;
+       left: 23px;
+       top: 330px;
+       background: #FFFFFF;
+       border: 1px solid #ffffff;
+       box-sizing: border-box;
+       border-radius: 2px;
+       font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: #070101;
+   }
+
+ .main_cart_button_buy{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+     display: flex;
+     width: 235px;
+     height: 47px;
+    } 
+ .main_cart_button_buy_calc{
+    position: relative;
+    width: 116px;
+    height: 47px;
+    margin-left: 1px;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 0px;
+}
+ .main_cart_button_buy_calc_add{
+     position: absolute;
+     width: 47px;
+     left: 80.9px;
+     top: 12px;
+    height: 30px;
+    background: url(./image/Group\ 17.svg) no-repeat;
+}
+.main_cart_button_buy_calc_sum{
+    position: absolute;
+    width: 47px;
+    left: 37.44px;
+    top: 12px;
+}
+.main_cart_button_buy_calc_delete{
+    position: absolute;
+    width: 47px;
+    height: 30px;
+    left: 11.68px;
+    top: 9px;
+   background: url(./image/Group\ 18.svg) no-repeat;
+
+}
+.main_cart_button_buy_button{
+    margin-left: 0px;
+    width: 116px;
+    border-right: 1px solid #E5E5E5;
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    padding-top: 12px;
+}
+
 .main_cart_slider{
     display: flex;
 }
