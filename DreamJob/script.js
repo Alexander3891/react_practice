@@ -110,27 +110,47 @@ const btns = document.querySelectorAll(".main_cart_button");
         item.addEventListener("mouseover", function () {
           this.classList.add(hoverClass);
         });
-
-        item.addEventListener("mouseout", function () {
+       item.addEventListener("mouseout", function () {
             this.classList.remove(hoverClass);
-        });
-          // ========= button click =============
+      });
+                 // ========= button click =============
           item.addEventListener("click", function () {
             this.classList.add(hoverClass2);
             this.innerHTML =  `
                     <div class="main_cart_button_buy">
                        <div class="main_cart_button_buy_calc">
                            <div class="main_cart_button_buy_calc_add"><img src="" alt=""></div>
-                           <div class="main_cart_button_buy_calc_sum">1шт.</div>
+                           <div class="main_cart_button_buy_calc_sum">${clicks}</div>
                            <div class="main_cart_button_buy_calc_delete"><img src="" alt=""></div>
                        </div>
                        <div class="main_cart_button_buy_button">Оформить</div>
                     </div>
-  
-          `;  
+                 `;
+                 
+              item.querySelector('.main_cart_button_buy_calc_add').onclick = () => {
+                  onClick()
+                   }
+              item.querySelector(".main_cart_button_buy_calc_sum").innerHTML = clicks;
+              
+              item.querySelector('.main_cart_button_buy_calc_delete').onclick = () => {
+                  onClick2();
+                  }
+          });
+          
+              let clicks = 0;
+              function onClick() {
+                  clicks += 1;
+                  return clicks;
+              };
+              function onClick2() {
+                if (clicks == 0) {
+                return clicks = 0;
+               } else clicks--;
+                    
+                item.querySelector("main_cart_button_buy_calc_sum").innerHTML = clicks;
+            };
 
-        });
-    });
+  });
 
    
  

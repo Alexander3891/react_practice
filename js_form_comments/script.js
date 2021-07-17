@@ -17,7 +17,7 @@ function draw(){
     }
     document.querySelector('ul').innerHTML = out;
 }
-//======================================================
+//=================  Calc  ==========================
 
 document.querySelector('.Plus').onclick = () => {
     onClick()
