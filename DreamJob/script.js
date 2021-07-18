@@ -107,20 +107,21 @@ const btns = document.querySelectorAll(".main_cart_button");
     const hoverClass = "main_cart_button_hover",
     hoverClass2 = "main_cart_button_hover2";
 //  ==============================================================         
+let s = [];
 const prises = document.querySelectorAll(".main_cart_price_price");
 prises.forEach(item => {
     let pris = item.innerHTML;
-})
+         s.push(pris);
+    // s = h.map(function (num) {
+    // return num * 2;
+    //  })
+    })
+    console.log(s);
    
 let h = [],
-    v = 0,
-    s2 = 0;
-let s = h.map(function(num) {
-    return num * 2;
-})
+    v = 0;
 
-console.log(h);
-console.log(s);
+
 // =====================================================================
 btns.forEach(item => {
           // ========= button hover =============
