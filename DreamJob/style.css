@@ -72,15 +72,16 @@ top: 20px;
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
-font-size: 14px;
+font-size: 13px;
 line-height: 16px;
 text-align: center;
+padding: 1.5px;
 background:#3588E9;;
 color: #FFFFFF;
 border: 1px solid #3588E9;;
 border-radius: 100%;
 width: 18px;
-height: 18px;
+height: 17px;
 }
 .basket_sum{
 padding-left: 5px;
@@ -94,6 +95,7 @@ font-style: normal;
 font-weight: bold;
 font-size: 18px;
 line-height: 21px;
+text-align: center;
 }
 .language_name{
     margin-right: 33px;
@@ -175,7 +177,7 @@ line-height: 21px;
 color: #000000;
 }
 
-.main_cart_price_price_2{
+.main_cart_price_price{
 cursor: pointer;
 font-family: Roboto;
 font-style: normal;
@@ -217,6 +219,7 @@ display: none;
    color: #FFFFFF;
    cursor: pointer;
 }
+
 .main_cart_button_hover{
  position: absolute;
     width: 233px;

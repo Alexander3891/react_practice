@@ -1,6 +1,5 @@
 "use strict";
 
-
     //========== slider 1 ==================
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -90,7 +89,7 @@ function showSlides3(n) {
   dots3[slideIndex3-1].className += " active";
 }
 //  ============= hover price at cart ================
-  let a = document.querySelector('.main_cart_price_price_2');
+  let a = document.querySelector('.main_cart_price_price');
   //вешаем на него события
 a.onmouseover = function (e) {
     document.querySelector('.main_cart_price_price_2_less').style.display = 'block';
@@ -99,20 +98,32 @@ a.onmouseover = function (e) {
 a.onmouseout = function (e) {
     document.querySelector('.main_cart_price_price_2_less').style.display = 'none';
 }
+
+
+
 // ========= button =============
 
 const btns = document.querySelectorAll(".main_cart_button");
     const hoverClass = "main_cart_button_hover",
-          hoverClass2 = "main_cart_button_hover2";
-
-    btns.forEach(item => {
+    hoverClass2 = "main_cart_button_hover2";
+          
+// let price = document.querySelector('.main_cart_price_price').innerHTML;
+//                 console.log(price);
+        
+let h = [],
+    v = 0,
+    s = [],
+    s2 = 0;
+btns.forEach(item => {
           // ========= button hover =============
         item.addEventListener("mouseover", function () {
           this.classList.add(hoverClass);
         });
        item.addEventListener("mouseout", function () {
             this.classList.remove(hoverClass);
-      });
+       });
+    
+    
                  // ========= button click =============
           item.addEventListener("click", function () {
             this.classList.add(hoverClass2);
@@ -128,17 +139,28 @@ const btns = document.querySelectorAll(".main_cart_button");
                  `;
                  
               item.querySelector('.main_cart_button_buy_calc_add').onclick = () => {
-                  onClick()
+                  onClick1()
                    }
               item.querySelector(".main_cart_button_buy_calc_sum").innerHTML = clicks;
               
               item.querySelector('.main_cart_button_buy_calc_delete').onclick = () => {
                   onClick2();
-                  }
+              }
+              item.querySelector('.main_cart_button_buy_button').onclick = () => {
+                  onClick3()
+             }
+              document.querySelector(".basket_quantity").innerHTML = v;
+              document.querySelector(".basket_sum").innerHTML = v;
+    
+
+
+
+
           });
-          
+        //   ===========================================================================
+         
               let clicks = 0;
-              function onClick() {
+              function onClick1() {
                   clicks += 1;
                   return clicks;
               };
@@ -148,11 +170,36 @@ const btns = document.querySelectorAll(".main_cart_button");
                } else clicks--;
                     
                 item.querySelector("main_cart_button_buy_calc_sum").innerHTML = clicks;
-            };
+              };
+        
+    let arrProducts = [],
+        arrSumProducts;
+    function onClick3() {
+                    
+                    arrProducts.push(clicks);
+                    arrSumProducts = arrProducts[arrProducts.length-1] ;
+                   clicks = 0;
+                //    console.log(arrSumProducts);
+                    onClick4();
+                    // ===============
+               }
+       
+                function onClick4() {
+                     h.push(arrSumProducts);
+                     onClick5();
+                // ========================
+               }
 
-  });
+              function onClick5() {
+                    v = h.reduce(function (a, b) {
+                        return a + b;
+                    });
+                //   ======================
+                
+                  
+                }
 
-   
+    });
  
 
 
