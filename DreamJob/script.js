@@ -106,14 +106,22 @@ a.onmouseout = function (e) {
 const btns = document.querySelectorAll(".main_cart_button");
     const hoverClass = "main_cart_button_hover",
     hoverClass2 = "main_cart_button_hover2";
-          
-// let price = document.querySelector('.main_cart_price_price').innerHTML;
-//                 console.log(price);
-        
+//  ==============================================================         
+const prises = document.querySelectorAll(".main_cart_price_price");
+prises.forEach(item => {
+    let pris = item.innerHTML;
+})
+   
 let h = [],
     v = 0,
-    s = [],
     s2 = 0;
+let s = h.map(function(num) {
+    return num * 2;
+})
+
+console.log(h);
+console.log(s);
+// =====================================================================
 btns.forEach(item => {
           // ========= button hover =============
         item.addEventListener("mouseover", function () {
