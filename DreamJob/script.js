@@ -112,15 +112,18 @@ const prises = document.querySelectorAll(".main_cart_price_price");
 prises.forEach(item => {
     let pris = item.innerHTML;
          s.push(pris);
-    // s = h.map(function (num) {
-    // return num * 2;
-    //  })
+   
     })
     console.log(s);
-   
-let h = [],
-    v = 0;
+    let sumArr = 0;
+    let h = [],
+    v = 0,
+    k = [0];
 
+    
+    console.log(h);
+    console.log(k);
+    console.log(prises[0].innerHTML);
 
 // =====================================================================
 btns.forEach(item => {
@@ -159,14 +162,13 @@ btns.forEach(item => {
                   onClick3()
              }
               document.querySelector(".basket_quantity").innerHTML = v;
-              document.querySelector(".basket_sum").innerHTML = v;
-    
 
 
 
 
           });
         //   ===========================================================================
+        
          
               let clicks = 0;
               function onClick1() {
@@ -181,9 +183,9 @@ btns.forEach(item => {
                 item.querySelector("main_cart_button_buy_calc_sum").innerHTML = clicks;
               };
         
-    let arrProducts = [],
-        arrSumProducts;
-    function onClick3() {
+              let arrProducts = [],
+              arrSumProducts;
+             function onClick3() {
                     
                     arrProducts.push(clicks);
                     arrSumProducts = arrProducts[arrProducts.length-1] ;
@@ -198,11 +200,24 @@ btns.forEach(item => {
                      onClick5();
                 // ========================
                }
-
               function onClick5() {
                     v = h.reduce(function (a, b) {
                         return a + b;
                     });
+                    if(h != []){
+                      k.splice(0, k.length, ...h);
+                      
+                      sumArr += s[0] * k[0];
+
+                      document.querySelector(".basket_sum").innerHTML =`
+                    ${sumArr} <span>р</span>
+                    ` ;
+                    } else{
+                      sumArr = s.reduce(function(r,a,i){return r+a*k[i]},0);
+                      document.querySelector(".basket_sum").innerHTML =`
+                      ${sumArr} <span>р</span>
+                      `; 
+                    }
                 //   ======================
                 
                   
