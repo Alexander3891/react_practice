@@ -188,16 +188,18 @@ color: #000000;
 }
 
 .main_cart_price_price_2_less {
-margin-top: 50px;
-margin-right: 30px;
+margin-top: 27px;
+margin-right: 33px;
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
-font-size: 14px;
+font-size: 16px;
 line-height: 16px;
 text-align: right;
 text-decoration-line: line-through;
-color: #737373;
+/* color: #737373; */
+color: #f70e0e;
+
 display: none;
 }
 .main_cart_button{
@@ -331,7 +333,7 @@ box-sizing: border-box;
 border-radius: 4px;
 }
 .main_cart_slider_foto_1{
-    background: url(../DreamJob/image/slider_kedy2.png) no-repeat;
+    /* background: url(../DreamJob/image/slider_kedy2.png) no-repeat; */
     display: block;
     width: 100px;
     height: 50px;
@@ -339,7 +341,7 @@ border-radius: 4px;
 
 }
 .main_cart_slider_foto_2{
-    background: url(../DreamJob/image/slider_obuv_1.png) no-repeat;
+    /* background: url(../DreamJob/image/slider_obuv_1.png) no-repeat; */
     display: block;
     width: 100px;
     height: 50px;
@@ -347,7 +349,7 @@ border-radius: 4px;
 
 }
 .main_cart_slider_foto_3{
-    background: url(../DreamJob/image/slider_muzhskiye-tufli.png) no-repeat;
+    /* background: url(../DreamJob/image/slider_muzhskiye-tufli.png) no-repeat; */
     display: block;
     width: 100px;
     height: 50px;
@@ -366,14 +368,18 @@ border-radius: 4px;
     display: block;
     width: 180px;
     height: 150px;
-    background: url(../DreamJob/image/slidr_kedy.png) no-repeat;
+    background: url(../DreamJob/image/slider_kedy2.png) no-repeat;
+
+    /* background: url(../DreamJob/image/slidr_kedy.png) no-repeat; */
     margin: 60px 23px 0px 0px;
     }
     .main_row4_slaider_collum12{
     display: block;
     width: 180px;
     height: 150px;
-    background: url(../DreamJob/image/slidr_kedy.png) no-repeat;
+    background: url(../DreamJob/image/slider_obuv_1.png) no-repeat;
+
+    /* background: url(../DreamJob/image/slidr_kedy.png) no-repeat; */
     margin: 60px 23px 0px 0px;
 
     }
@@ -381,7 +387,9 @@ border-radius: 4px;
     display: block;
     width: 180px;
     height: 150px;
-    background: url(../DreamJob/image/slidr_kedy.png) no-repeat;
+    background: url(../DreamJob/image/slider_muzhskiye-tufli.png) no-repeat;
+    
+    /* background: url(../DreamJob/image/slidr_kedy.png) no-repeat; */
     margin: 60px 23px 0px 0px;
     }
     
