@@ -109,7 +109,7 @@ const btns = document.querySelectorAll(".main_cart_button");
 //  ==============================================================         
 let s = [];
 const prises = document.querySelectorAll(".main_cart_price_price");
-prises.forEach(item => {
+prises.forEach((item, index) => {
     let pris = item.innerHTML;
          s.push(pris);
    
@@ -196,7 +196,7 @@ btns.forEach(item => {
                }
        
                 function onClick4() {
-                     h.push(arrSumProducts);
+                      h.push(arrSumProducts);
                      onClick5();
                 // ========================
                }
