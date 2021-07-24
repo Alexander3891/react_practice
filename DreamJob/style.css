@@ -284,6 +284,9 @@ display: none;
     height: 30px;
     background: url(./image/Group\ 17.svg) no-repeat;
 }
+.main_cart_button_buy_calc_spinner{
+display: none;
+}
 .main_cart_button_buy_calc_sum{
     position: absolute;
     width: 47px;

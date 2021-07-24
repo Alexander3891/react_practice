@@ -1,46 +1,12 @@
 "use strict";
 
-// const cards = document.querySelectorAll(".card");
-// const cardsPrices = document.querySelectorAll(".card__price");
-// const cardsAddBtns = document.querySelectorAll(".card__add-btn");
-// const cardsRemoveBtns = document.querySelectorAll(".card__remove-btn");
-// const itemsCounter = document.querySelector(".cart__counter");
-// const priceCounter = document.querySelector(".cart__price");
-// let totalPrice = 0;
 
-// cardsAddBtns.forEach((item, index) => {
-//  item.addEventListener("click", () => {
-//      addToCart(index);
-//   });
-// }); 
-
-// cardsRemoveBtns.forEach((item, index) => {
-//  item.addEventListener("click", () => {
-//      removeFromCart(index);
-//   });
-// });
-
-// function addToCart (index) {
-//  totalPrice += Number(cardsPrices[index].innerText);
-//  priceCounter.innerText = totalPrice;
-  
-//   itemsCounter.innerText++;
-// }
-
-// function removeFromCart (index) {
-//  if (itemsCounter.innerText === "0") return;
-//  totalPrice -= Number(cardsPrices[index].innerText);
-//   priceCounter.innerText = totalPrice;
-  
-//   itemsCounter.innerText--;
-// }
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
 let totalPrice = 0,
 arrSumProducts = [],
 SumProductsHeader = 0,
-SumPricesHeader = [0];
-let PrisesCards = [],
-    sumArr = 0;
+SumPricesHeader = [0],
+PrisesCards = [],
+sumArr = 0;
 
 
 
@@ -166,128 +132,131 @@ const btns = item.querySelectorAll(".main_cart_button");
        });
     
         // ========= button click =============
-          item.addEventListener("click", function () {
+        item.addEventListener("click", function () {
             this.classList.add(hoverClass2);
             this.innerHTML =  `
                     <div class="main_cart_button_buy">
                        <div class="main_cart_button_buy_calc">
                            <div class="main_cart_button_buy_calc_add"><img src="" alt=""></div>
                            <div class="main_cart_button_buy_calc_sum">0</div>
+                           <div class="main_cart_button_buy_calc_spinner">
+                         <img src="/DreamJob/image/spinner.svg" style="display: block; margin: 2px 0px 0px 42px;">
+                         </div>
                            <div class="main_cart_button_buy_calc_delete"><img src="" alt=""></div>
                        </div>
                        <div class="main_cart_button_buy_button">Оформить</div>
                     </div>
                  `;
+
+            
                  item.querySelector('.main_cart_button_buy_calc_add').onclick = () => {
-                    onClick1()
-                     }
+                  onClickAdd()
+                  onClickSpiner()
+                   timeSpiner().then(function (done) {
+                  spinner = done;
+                     item.querySelector('.main_cart_button_buy_calc_spinner').style.display = spinner;
+                  });
+                     timeSum().then(function (done) {
+                  sum = done;
+                     item.querySelector('.main_cart_button_buy_calc_sum').style.display = sum;
+                  });
+
+                }
+                item.querySelector('.main_cart_button_buy_calc_spinner').style.display = spinner;
+                item.querySelector('.main_cart_button_buy_calc_sum').style.display = sum;
+
                 item.querySelector(".main_cart_button_buy_calc_sum").innerHTML = clicks;
                 
                 item.querySelector('.main_cart_button_buy_calc_delete').onclick = () => {
-                    onClick2();
-                }
+                    onClickDelete();
+                  onClickSpiner()
+                   timeSpiner().then(function (done) {
+                  spinner = done;
+                     item.querySelector('.main_cart_button_buy_calc_spinner').style.display = spinner;
+                  });
+                     timeSum().then(function (done) {
+                  sum = done;
+                     item.querySelector('.main_cart_button_buy_calc_sum').style.display = sum;
+                  });
+                 }
                 item.querySelector('.main_cart_button_buy_button').onclick = () => {
-                  onClick3()
+                  onClickBuyButtob()
                 }
-              document.querySelector(".basket_quantity").innerHTML = SumProductsHeader;
+                document.querySelector(".basket_quantity").innerHTML = SumProductsHeader;
 
-                 
-              
-                  
-        //     const cardsAddBtns = item.querySelectorAll(".main_cart_button_buy_calc_add");
-        //     const cardsRemoveBtns = item.querySelectorAll(".main_cart_button_buy_calc_delete");
-        //     const itemsCounter = document.querySelector(".basket_quantity");
-        //     const priceCounter = document.querySelector(".basket_sum");
+          });
+        let spinner = 'none',
+            sum = 'block',
+            clicks = 0;
 
-        //    console.log(priceCounter.innerText);
-        //    console.log(cardsPrices[1].innerText);
-        //    console.log(itemsCounter.innerText);
-        //    console.log(totalPrice);
+        function onClickSpiner() {
+            spinner = 'block',
+            sum = 'none';
+        }
 
-           
-           
-        //    cardsAddBtns.forEach((item, index) => {
-	    //        item.addEventListener("click", () => {
-  	    //        addToCart(index);
-        //       });
-        //    }); 
-        //     cardsRemoveBtns.forEach((item, index) => {
-        //  	item.addEventListener("click", () => {
-  	    //     removeFromCart(index);
+         function timeSpiner() {
+         let promise = new Promise(function(resolve, reject) {
+         window.setTimeout(function() {
+          resolve('none');
+          }, 300);
+         });
+         return promise;
+        }
 
-        //         });
-        //     });
-
-        //     function addToCart(index) {
-        //         totalPrice += Number(cardsPrices[index].innerText);      
-        //         priceCounter.innerText = totalPrice;
-        //         itemsCounter.innerText++;
-
-        //     }
-       
-        //     function removeFromCart (index) {
-        //         if (itemsCounter.innerText === "0") return;
-        //     totalPrice -= Number(cardsPrices[index].innerText);
-        //     priceCounter.innerText = totalPrice;
-        //     itemsCounter.innerText--;
-        //     }
-
-
-    });
-    let clicks = 0;
-                function onClick1() {
-                    clicks += 1;
-                    return clicks;
-                };
-                function onClick2() {
+        function timeSum() {
+        let promise = new Promise(function(resolve, reject) {
+        window.setTimeout(function() {
+         resolve('block');
+        }, 300);
+        });
+        return promise;
+        }
+        function onClickAdd() {
+            
+            clicks += 1;
+            return clicks;
+        };
+             
+        function onClickDelete() {
                   if (clicks == 0) {
                   return clicks = 0;
                  } else clicks--;
-                      
-                  item.querySelector("main_cart_button_buy_calc_sum").innerHTML = clicks;
-                };
-                let arrProducts = [],
+        };
+
+
+        let arrProducts = [],
                 arrSumProduct;
-               function onClick3() {
+               function onClickBuyButtob() {
                       arrProducts.push(clicks);
                       arrSumProduct = arrProducts[arrProducts.length-1] ;
                      clicks = 0;
-                     onClick4();
-                     // console.log(arrProducts);
-                    // console.log(arrSumProduct);
-                    
-                }
-                function onClick4() {
+                     CreateProducts();
+                   }
+                function CreateProducts() {
                     arrSumProducts.push(arrSumProduct);
-                   onClick5();
-              // ========================
+                   CreateProductsHeader();
              }
              console.log(arrSumProducts);
              const cardsPrices = document.querySelectorAll(".main_cart_price_price");
 
-            function onClick5() {
+            function CreateProductsHeader() {
                 SumProductsHeader = arrSumProducts.reduce(function (a, b) {
                       return a + b;
-                  });
-                //   console.log(SumProductsHeader);
-                //   console.log(PrisesCards);
-                //   console.log(SumPricesHeader);
-
-                  if(arrSumProducts != []){
-
-                    sumArr += Number(cardsPrices[index].innerText) * arrSumProduct;
-
-                    document.querySelector(".basket_sum").innerHTML =`
+                });
+              
+            if(arrSumProducts != []){
+                  sumArr += Number(cardsPrices[index].innerText) * arrSumProduct;
+                  document.querySelector(".basket_sum").innerHTML =`
                   ${sumArr} <span>р</span>
                   ` ;
-                  } else{
+            }
+            else {
                     sumArr = PrisesCards.reduce(function(r,a,i){return r+a*k[i]},0);
                     document.querySelector(".basket_sum").innerHTML =`
                     ${sumArr} <span>р</span>
                     `; 
-                  }
-  
             }
+        }
 
      });
             
