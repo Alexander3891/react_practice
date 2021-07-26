@@ -225,7 +225,7 @@ const btns = item.querySelectorAll(".main_cart_button");
 
 
         let arrProducts = [],
-                arrSumProduct;
+            arrSumProduct;
                function onClickBuyButtob() {
                       arrProducts.push(clicks);
                       arrSumProduct = arrProducts[arrProducts.length-1] ;
