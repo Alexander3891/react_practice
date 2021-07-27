@@ -2,11 +2,11 @@
 
 
 let totalPrice = 0,
-arrSumProducts = [],
-SumProductsHeader = 0,
-SumPricesHeader = [0],
-PrisesCards = [],
-sumArr = 0;
+    arrSumProducts = [],
+    SumProductsHeader = 0,
+    SumPricesHeader = [0],
+    PrisesCards = [],
+    sumArr = 0;
 
 const CATALOG = [
     {
@@ -44,7 +44,7 @@ const CATALOG = [
     },
     {
         id: 'el4',
-        name: 'Adidas', 
+        name: 'Adidas',
         img1: 'image/4/112686_1-1024x768.jpg',
         img2: 'image/4/113022_2-1024x768.jpg',
         img3: 'image/4/113023_3-1024x768.jpg',
@@ -75,11 +75,11 @@ const CATALOG = [
         img6: 'image/6/112938-1024x768.jpg',
         price: 340,
     },
-    
+
 ];
 let card = '';
-  CATALOG.forEach(({id, price, name,img1,img2,img3,img4,img5,img6}) => {
-         card += `
+CATALOG.forEach(({ id, price, name, img1, img2, img3, img4, img5, img6 }) => {
+    card += `
             <div class="main_cart">
                <div class="main_cart_slider">
                     <div class="main_cart_slider_foto">
@@ -146,81 +146,81 @@ let card = '';
                 </div>
              `;
 
-            });
+});
 
 
-                 // =========================== mainCards =============================
+// =========================== mainCards =============================
 document.querySelector('.main_container').innerHTML = card;
 const mainCards = document.querySelectorAll('.main_cart');
 // console.log(mainCards);
-mainCards.forEach(function (item,index) {
-            // item.innerHTML = card;
-            //  console.log(item);                   
+mainCards.forEach(function (item, index) {
+    // item.innerHTML = card;
+    //  console.log(item);                   
 
-                   //========== mainCards- slider ==================
-     
+    //========== mainCards- slider ==================
+
     let slideIndex = 1;
     showSlides(slideIndex);
-     // Вперед/назад элементы управления
-     
+    // Вперед/назад элементы управления
+
     // Элементы управления миниатюрами изображений
-       function showSlides(n) {
-     let i;
-     let slides = item.getElementsByClassName("mySlides");
-     let dots = item.getElementsByClassName("dot");
-     if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-     for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    function showSlides(n) {
+        let i;
+        let slides = item.getElementsByClassName("mySlides");
+        let dots = item.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
     }
     item.querySelectorAll('.main_cart_slider_foto_1').forEach((item, index) => {
-	item.addEventListener("click", () => {
-        showSlides(slideIndex = index + 1);
-         });
+        item.addEventListener("click", () => {
+            showSlides(slideIndex = index + 1);
+        });
     });
-        
+
     item.querySelectorAll('.dot').forEach((item, index) => {
-	item.addEventListener("click", () => {
-      showSlides(slideIndex = index+1); 
-         });
+        item.addEventListener("click", () => {
+            showSlides(slideIndex = index + 1);
+        });
     });
-    
-                  //  ============= mainCards - hover price at cart ================
-    
-  let a = item.querySelector('.main_cart_price_price');
-  //вешаем на него события
-  a.onmouseover = function (e) {
-    item.querySelector('.main_cart_price_price_2_less').style.display = 'block';
-}
 
-  a.onmouseout = function (e) {
-    item.querySelector('.main_cart_price_price_2_less').style.display = 'none';
-}
+    //  ============= mainCards - hover price at cart ================
 
-                       // ========= mainCards button =============
+    let a = item.querySelector('.main_cart_price_price');
+    //вешаем на него события
+    a.onmouseover = function (e) {
+        item.querySelector('.main_cart_price_price_2_less').style.display = 'block';
+    }
 
-const btns = item.querySelectorAll(".main_cart_button");
+    a.onmouseout = function (e) {
+        item.querySelector('.main_cart_price_price_2_less').style.display = 'none';
+    }
+
+    // ========= mainCards button =============
+
+    const btns = item.querySelectorAll(".main_cart_button");
     const hoverClass = "main_cart_button_hover",
-          hoverClass2 = "main_cart_button_hover2";
+        hoverClass2 = "main_cart_button_hover2";
     btns.forEach((item) => {
         // ========= button hover =============
         item.addEventListener("mouseover", function () {
-          this.classList.add(hoverClass);
+            this.classList.add(hoverClass);
         });
-       item.addEventListener("mouseout", function () {
+        item.addEventListener("mouseout", function () {
             this.classList.remove(hoverClass);
-       });
-    
+        });
+
         // ========= button click =============
         item.addEventListener("click", function () {
             this.classList.add(hoverClass2);
-            this.innerHTML =  `
+            this.innerHTML = `
                     <div class="main_cart_button_buy">
                        <div class="main_cart_button_buy_calc">
                            <div class="main_cart_button_buy_calc_add"><img src="" alt=""></div>
@@ -234,122 +234,122 @@ const btns = item.querySelectorAll(".main_cart_button");
                     </div>
                  `;
 
-            
-                 item.querySelector('.main_cart_button_buy_calc_add').onclick = () => {
-                  onClickAdd()
-                  onClickSpiner()
-                   timeSpiner().then(function (done) {
-                  spinner = done;
-                     item.querySelector('.main_cart_button_buy_calc_spinner').style.display = spinner;
-                  });
-                     timeSum().then(function (done) {
-                  sum = done;
-                     item.querySelector('.main_cart_button_buy_calc_sum').style.display = sum;
-                  });
 
-                }
-                item.querySelector('.main_cart_button_buy_calc_spinner').style.display = spinner;
-                item.querySelector('.main_cart_button_buy_calc_sum').style.display = sum;
+            item.querySelector('.main_cart_button_buy_calc_add').onclick = () => {
+                onClickAdd()
+                onClickSpiner()
+                timeSpiner().then(function (done) {
+                    spinner = done;
+                    item.querySelector('.main_cart_button_buy_calc_spinner').style.display = spinner;
+                });
+                timeSum().then(function (done) {
+                    sum = done;
+                    item.querySelector('.main_cart_button_buy_calc_sum').style.display = sum;
+                });
 
-                item.querySelector(".main_cart_button_buy_calc_sum").innerHTML = clicks;
-                
-                item.querySelector('.main_cart_button_buy_calc_delete').onclick = () => {
-                    onClickDelete();
-                  onClickSpiner()
-                   timeSpiner().then(function (done) {
-                  spinner = done;
-                     item.querySelector('.main_cart_button_buy_calc_spinner').style.display = spinner;
-                  });
-                     timeSum().then(function (done) {
-                  sum = done;
-                     item.querySelector('.main_cart_button_buy_calc_sum').style.display = sum;
-                  });
-                 }
-                item.querySelector('.main_cart_button_buy_button').onclick = () => {
-                  onClickBuyButtob()
-                }
-                document.querySelector(".basket_quantity").innerHTML = SumProductsHeader;
+            }
+            item.querySelector('.main_cart_button_buy_calc_spinner').style.display = spinner;
+            item.querySelector('.main_cart_button_buy_calc_sum').style.display = sum;
 
-          });
+            item.querySelector(".main_cart_button_buy_calc_sum").innerHTML = clicks;
+
+            item.querySelector('.main_cart_button_buy_calc_delete').onclick = () => {
+                onClickDelete();
+                onClickSpiner()
+                timeSpiner().then(function (done) {
+                    spinner = done;
+                    item.querySelector('.main_cart_button_buy_calc_spinner').style.display = spinner;
+                });
+                timeSum().then(function (done) {
+                    sum = done;
+                    item.querySelector('.main_cart_button_buy_calc_sum').style.display = sum;
+                });
+            }
+            item.querySelector('.main_cart_button_buy_button').onclick = () => {
+                onClickBuyButtob()
+            }
+            document.querySelector(".basket_quantity").innerHTML = SumProductsHeader;
+
+        });
         let spinner = 'none',
             sum = 'block',
             clicks = 0;
 
         function onClickSpiner() {
             spinner = 'block',
-            sum = 'none';
+                sum = 'none';
         }
 
-         function timeSpiner() {
-         let promise = new Promise(function(resolve, reject) {
-         window.setTimeout(function() {
-          resolve('none');
-          }, 300);
-         });
-         return promise;
+        function timeSpiner() {
+            let promise = new Promise(function (resolve, reject) {
+                window.setTimeout(function () {
+                    resolve('none');
+                }, 300);
+            });
+            return promise;
         }
 
         function timeSum() {
-        let promise = new Promise(function(resolve, reject) {
-        window.setTimeout(function() {
-         resolve('block');
-        }, 300);
-        });
-        return promise;
+            let promise = new Promise(function (resolve, reject) {
+                window.setTimeout(function () {
+                    resolve('block');
+                }, 300);
+            });
+            return promise;
         }
         function onClickAdd() {
-            
+
             clicks += 1;
             return clicks;
         };
-             
+
         function onClickDelete() {
-                  if (clicks == 0) {
-                  return clicks = 0;
-                 } else clicks--;
+            if (clicks == 0) {
+                return clicks = 0;
+            } else clicks--;
         };
 
 
         let arrProducts = [],
             arrSumProduct;
-               function onClickBuyButtob() {
-                      arrProducts.push(clicks);
-                      arrSumProduct = arrProducts[arrProducts.length-1] ;
-                     clicks = 0;
-                     CreateProducts();
-                   }
-                function CreateProducts() {
-                    arrSumProducts.push(arrSumProduct);
-                   CreateProductsHeader();
-             }
-            //  console.log(arrSumProducts);
-             const cardsPrices = document.querySelectorAll(".main_cart_price_price");
-             console.log(cardsPrices[index]);
+        function onClickBuyButtob() {
+            arrProducts.push(clicks);
+            arrSumProduct = arrProducts[arrProducts.length - 1];
+            clicks = 0;
+            CreateProducts();
+        }
+        function CreateProducts() {
+            arrSumProducts.push(arrSumProduct);
+            CreateProductsHeader();
+        }
+        //  console.log(arrSumProducts);
+        const cardsPrices = document.querySelectorAll(".main_cart_price_price");
+        console.log(cardsPrices[index]);
 
-            function CreateProductsHeader() {
-                SumProductsHeader = arrSumProducts.reduce(function (a, b) {
-                      return a + b;
-                });
-              
-            if(arrSumProducts != []){
-                  sumArr += Number(cardsPrices[index].innerText) * arrSumProduct;
-                  document.querySelector(".basket_sum").innerHTML =`
+        function CreateProductsHeader() {
+            SumProductsHeader = arrSumProducts.reduce(function (a, b) {
+                return a + b;
+            });
+
+            if (arrSumProducts != []) {
+                sumArr += Number(cardsPrices[index].innerText) * arrSumProduct;
+                document.querySelector(".basket_sum").innerHTML = `
                   ${sumArr} <span>р</span>
                   ` ;
             }
             else {
-                    sumArr = PrisesCards.reduce(function(r,a,i){return r+a*k[i]},0);
-                    document.querySelector(".basket_sum").innerHTML =`
+                sumArr = PrisesCards.reduce(function (r, a, i) { return r + a * k[i] }, 0);
+                document.querySelector(".basket_sum").innerHTML = `
                     ${sumArr} <span>р</span>
-                    `; 
+                    `;
             }
         }
 
-     });
+    });
 
-   
-            
-  
+
+
+
 });
 
 
