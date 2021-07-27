@@ -340,7 +340,7 @@ border-radius: 4px;
     display: block;
     width: 100px;
     height: 50px;
-    margin: 13px 8px 13px 8px;
+    margin: 10px 8px 13px 4px;
 
 }
 .main_cart_slider_foto_2{
@@ -371,7 +371,7 @@ border-radius: 4px;
     display: block;
     width: 180px;
     height: 150px;
-    background: url(../DreamJob/image/slider_kedy2.png) no-repeat;
+    /* background: url(../DreamJob/image/slider_kedy2.png) no-repeat; */
 
     /* background: url(../DreamJob/image/slidr_kedy.png) no-repeat; */
     margin: 60px 23px 0px 0px;
@@ -380,7 +380,7 @@ border-radius: 4px;
     display: block;
     width: 180px;
     height: 150px;
-    background: url(../DreamJob/image/slider_obuv_1.png) no-repeat;
+    /* background: url(../DreamJob/image/slider_obuv_1.png) no-repeat; */
 
     /* background: url(../DreamJob/image/slidr_kedy.png) no-repeat; */
     margin: 60px 23px 0px 0px;
@@ -390,7 +390,7 @@ border-radius: 4px;
     display: block;
     width: 180px;
     height: 150px;
-    background: url(../DreamJob/image/slider_muzhskiye-tufli.png) no-repeat;
+    /* background: url(../DreamJob/image/slider_muzhskiye-tufli.png) no-repeat; */
     
     /* background: url(../DreamJob/image/slidr_kedy.png) no-repeat; */
     margin: 60px 23px 0px 0px;

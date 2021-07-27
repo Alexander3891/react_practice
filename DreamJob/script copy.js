@@ -11,68 +11,91 @@ sumArr = 0;
 const CATALOG = [
     {
         id: 'el1',
-        name: 'Кеды мужские Welfare 332674411/BLUE/40',
-        img: 'image/1/114667-1024x768',
+        name: 'Nike',
+        img1: 'image/1/114667_1-1024x768.jpg',
+        img2: 'image/1/114668_2-1024x768.jpg',
+        img3: 'image/1/114669_3-1024x768.jpg',
+        img4: 'image/1/114667-1024x768.jpg',
+        img5: 'image/1/114668-1024x768.jpg',
+        img6: 'image/1/114669-1024x768.jpg',
         price: 150,
     },
     {
         id: 'el2',
-        name: 'Кеды мужские Welfare 340654211/BRN/40',
-        img: 'image/2/112690-1024x768.jpg',
+        name: 'Puma',
+        img1: 'image/2/108964_1-1024x768.jpg',
+        img2: 'image/2/112690_2-1024x768.jpg',
+        img3: 'image/2/113010_3-1024x768.jpg',
+        img4: 'image/2/108964-1024x768.jpg',
+        img5: 'image/2/112690-1024x768.jpg',
+        img6: 'image/2/113010-1024x768.jpg',
         price: 220,
     },
     {
         id: 'el3',
-        name: 'Кеды мужские Welfare 340661211/BLUE/40',
-        img: 'image/3/112688-1024x768.jpg',
+        name: 'Vans',
+        img1: 'image/3/112688_1-1024x768.jpg',
+        img2: 'image/3/113024_2-1024x768.jpg',
+        img3: 'image/3/113025_3-1024x768.jpg',
+        img4: 'image/3/112688-1024x768.jpg',
+        img5: 'image/3/113024-1024x768.jpg',
+        img6: 'image/3/113025-1024x768.jpg',
         price: 300,
     },
     {
         id: 'el4',
-        name: 'Кеды мужские Welfare 340674111/BEIGE/40', 
-        img: 'image/4/112686-1024x768.jpg',
+        name: 'Adidas', 
+        img1: 'image/4/112686_1-1024x768.jpg',
+        img2: 'image/4/113022_2-1024x768.jpg',
+        img3: 'image/4/113023_3-1024x768.jpg',
+        img4: 'image/4/112686-1024x768.jpg',
+        img5: 'image/4/113022-1024x768.jpg',
+        img6: 'image/4/113023-1024x768.jpg',
         price: 620,
     },
     {
         id: 'el5',
-        name: 'Кеды мужские Welfare 340694411/D.BLUE/40',
-        img: 'image/5/112693-1024x768.jpg',
+        name: 'Reebok',
+        img1: 'image/5/108967_1-1024x768.jpg',
+        img2: 'image/5/112693_2-1024x768.jpg',
+        img3: 'image/5/113030_3-1024x768.jpg',
+        img4: 'image/5/108967-1024x768.jpg',
+        img5: 'image/5/112693-1024x768.jpg',
+        img6: 'image/5/113030-1024x768.jpg',
         price: 180,
     },
     {
         id: 'el6',
-        name: 'Кеды мужские Welfare Pulse 340594211/RED/40',
-        img: 'image/6/112697-1024x768.jpg',
+        name: 'Ecco',
+        img1: 'image/6/108971_1-1024x768.jpg',
+        img2: 'image/6/112697_2-1024x768.jpg',
+        img3: 'image/6/112938_3-1024x768.jpg',
+        img4: 'image/6/108971-1024x768.jpg',
+        img5: 'image/6/112697-1024x768.jpg',
+        img6: 'image/6/112938-1024x768.jpg',
         price: 340,
     },
     
 ];
-//   CATALOG.forEach(({id, price}) => {
-        //    console.log(id,price);
-// });
-
-                 // =========================== mainCards =============================
-
-const mainCards = document.querySelectorAll('.main_cart');
-  CATALOG.forEach(({id, price}) => {
-
-mainCards.forEach(function (item) {
-            item.innerHTML = `
-                    <div class="main_cart_slider">
+let card = '';
+  CATALOG.forEach(({id, price, name,img1,img2,img3,img4,img5,img6}) => {
+         card += `
+            <div class="main_cart">
+               <div class="main_cart_slider">
                     <div class="main_cart_slider_foto">
                             <div class="main_cart_slider_foto_container">
                                 <div class="main_cart_slider_foto_1">
-                                <img src="/DreamJob/image/slider_kedy2.png" alt="">
+                                <img src=${img1} alt="">
                                 </div>
                             </div>
                             <div class="main_cart_slider_foto_container">
                                 <div class="main_cart_slider_foto_1">
-                                <img src="/DreamJob/image/slider_obuv_1.png" alt="">
+                                <img src=${img2} alt="">
                                 </div>
                             </div>
                             <div class="main_cart_slider_foto_container">
                                 <div class="main_cart_slider_foto_1">
-                                <img src="/DreamJob/image/slider_muzhskiye-tufli.png" alt="">
+                                <img src=${img3} alt="">
                                </div>
                             </div>
                         </div>
@@ -80,17 +103,26 @@ mainCards.forEach(function (item) {
                         <div class="slideshow-container">
                             <div class="mySlides fade">
                                 <div class="main_row4_slaider_row">
-                                    <div class="main_row4_slaider_collum1"></div>
+                                    <div class="main_row4_slaider_collum1">
+                                <img src=${img4} alt="">
+                                    
+                                    </div>
                                 </div>
                             </div>
                             <div class="mySlides fade">
                                 <div class="main_row4_slaider_row">
-                                    <div class="main_row4_slaider_collum12"></div>
+                                    <div class="main_row4_slaider_collum12">
+                                <img src=${img5} alt="">
+                                    
+                                    </div>
                                 </div>
                             </div>
                             <div class="mySlides fade">
                                 <div class="main_row4_slaider_row">
-                                    <div class="main_row4_slaider_collum13"></div>
+                                    <div class="main_row4_slaider_collum13">
+                                <img src=${img6} alt="">
+                                    
+                                    </div>
                                 </div>
                             </div>
                     
@@ -106,13 +138,24 @@ mainCards.forEach(function (item) {
                      <div class="main_cart_price_price_2_less">2145</div> 
 
                      <div class="main_cart_price">
-                        <div class="main_cart_price_title">Nice</div>
+                        <div class="main_cart_price_title">${name}</div>
                         <div class="main_cart_price_price">${price}</div>
                     </div>
                     <button class="main_cart_button">Начать оформление</button>
                     </div>
-    `;
-           console.log(id,price);
+                </div>
+             `;
+
+            });
+
+
+                 // =========================== mainCards =============================
+document.querySelector('.main_container').innerHTML = card;
+const mainCards = document.querySelectorAll('.main_cart');
+// console.log(mainCards);
+mainCards.forEach(function (item,index) {
+            // item.innerHTML = card;
+            //  console.log(item);                   
 
                    //========== mainCards- slider ==================
      
@@ -165,9 +208,8 @@ mainCards.forEach(function (item) {
 const btns = item.querySelectorAll(".main_cart_button");
     const hoverClass = "main_cart_button_hover",
           hoverClass2 = "main_cart_button_hover2";
-     
-    btns.forEach((item,index) => {
-          // ========= button hover =============
+    btns.forEach((item) => {
+        // ========= button hover =============
         item.addEventListener("mouseover", function () {
           this.classList.add(hoverClass);
         });
@@ -280,8 +322,9 @@ const btns = item.querySelectorAll(".main_cart_button");
                     arrSumProducts.push(arrSumProduct);
                    CreateProductsHeader();
              }
-             console.log(arrSumProducts);
+            //  console.log(arrSumProducts);
              const cardsPrices = document.querySelectorAll(".main_cart_price_price");
+             console.log(cardsPrices[index]);
 
             function CreateProductsHeader() {
                 SumProductsHeader = arrSumProducts.reduce(function (a, b) {
@@ -309,6 +352,5 @@ const btns = item.querySelectorAll(".main_cart_button");
   
 });
 
-});
 
 
