@@ -1,13 +1,5 @@
 "use strict";
 
-
-let totalPrice = 0,
-    arrSumProducts = [],
-    SumProductsHeader = 0,
-    SumPricesHeader = [0],
-    PrisesCards = [],
-    sumArr = 0;
-
 const CATALOG = [
     {
         id: 'el1',
@@ -77,6 +69,17 @@ const CATALOG = [
     },
 
 ];
+let totalPrice = 0,
+    arrSumProducts = [],
+    SumProductsHeader = 0,
+    SumPricesHeader = [0],
+    PrisesCards = [],
+    sumArr = 0,
+    htmlCatologs = [];
+
+
+
+                                   // =========================== Cards =============================
 let card = '';
 CATALOG.forEach(({ id, price, name, img1, img2, img3, img4, img5, img6 }) => {
     card += `
@@ -149,16 +152,14 @@ CATALOG.forEach(({ id, price, name, img1, img2, img3, img4, img5, img6 }) => {
 });
 
 
-// =========================== mainCards =============================
+                 // =========================== mainCards =============================
 document.querySelector('.main_container').innerHTML = card;
 const mainCards = document.querySelectorAll('.main_cart');
 // console.log(mainCards);
 mainCards.forEach(function (item, index) {
-    // item.innerHTML = card;
-    //  console.log(item);                   
 
-    //========== mainCards- slider ==================
-
+                            //========== mainCards- slider ==================
+      
     let slideIndex = 1;
     showSlides(slideIndex);
     // Вперед/назад элементы управления
@@ -191,7 +192,7 @@ mainCards.forEach(function (item, index) {
         });
     });
 
-    //  ============= mainCards - hover price at cart ================
+                   //  ============= mainCards - hover price at cart ================
 
     let a = item.querySelector('.main_cart_price_price');
     //вешаем на него события
@@ -202,8 +203,18 @@ mainCards.forEach(function (item, index) {
     a.onmouseout = function (e) {
         item.querySelector('.main_cart_price_price_2_less').style.display = 'none';
     }
+                     // =========================== Shoping =============================
 
-    // ========= mainCards button =============
+    // ========= title for shopping =============
+
+let nams = document.querySelectorAll(".main_cart_price_title");
+    console.log(nams[index].innerText);
+
+let prices = document.querySelectorAll(".main_cart_price_price");
+    console.log(prices[index].innerText);
+    
+
+                                     // ========= mainCards button =============
 
     const btns = item.querySelectorAll(".main_cart_button");
     const hoverClass = "main_cart_button_hover",
@@ -233,7 +244,9 @@ mainCards.forEach(function (item, index) {
                        <div class="main_cart_button_buy_button">Оформить</div>
                     </div>
                  `;
-
+            
+            
+         
 
             item.querySelector('.main_cart_button_buy_calc_add').onclick = () => {
                 onClickAdd()
@@ -267,10 +280,40 @@ mainCards.forEach(function (item, index) {
             }
             item.querySelector('.main_cart_button_buy_button').onclick = () => {
                 onClickBuyButtob()
-            }
-            document.querySelector(".basket_quantity").innerHTML = SumProductsHeader;
+                   
+                // ========= title for shopping =============
+                    
+                htmlCatolog = `
+                <tr>
+                     <td class="shopping-element_name">🌟 ${nams[index].innerText}:</td>
+                     <td class="shopping-element_price">${prices[index].innerText}РУБ</td>
+                </tr>
+                `;
+            htmlCatologs.push(htmlCatolog);
 
-        });
+            }
+
+            const html = `
+        <div class="shopping-container">
+            <div class="shoping__close" onclick="document.querySelector('.main_shopping').innerHTML = '';"></div>
+             <table>
+                  ${htmlCatologs}
+                  <tr>
+                     <td class="shopping-element_name">❇️ СУММА</td>
+                     <td class="shopping-element_price shopping-element_price2">${sumArr.toLocaleString()} РУБ</td>
+                </tr>       
+             </table>
+
+        </div>
+        `;
+            document.querySelector('.basket').onclick = () => {
+                document.querySelector('.main_shopping').innerHTML = html;
+      }
+           document.querySelector(".basket_quantity").innerHTML = SumProductsHeader;
+           console.log(htmlCatologs);
+    });
+
+
         let spinner = 'none',
             sum = 'block',
             clicks = 0;
@@ -298,7 +341,6 @@ mainCards.forEach(function (item, index) {
             return promise;
         }
         function onClickAdd() {
-
             clicks += 1;
             return clicks;
         };
@@ -324,8 +366,8 @@ mainCards.forEach(function (item, index) {
         }
         //  console.log(arrSumProducts);
         const cardsPrices = document.querySelectorAll(".main_cart_price_price");
-        console.log(cardsPrices[index]);
-
+        
+let htmlCatolog = '';
         function CreateProductsHeader() {
             SumProductsHeader = arrSumProducts.reduce(function (a, b) {
                 return a + b;
@@ -342,14 +384,9 @@ mainCards.forEach(function (item, index) {
                 document.querySelector(".basket_sum").innerHTML = `
                     ${sumArr} <span>р</span>
                     `;
-            }
-        }
-
-    });
-
-
-
-
+            } 
+       }
+   });
 });
 
 

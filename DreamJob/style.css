@@ -64,6 +64,8 @@
   box-sizing: border-box;
   border-radius: 45px;
   background: url(./image/header_basket.png) 21.78px 7px no-repeat;
+  cursor: pointer;
+
 }
 .basket_container {
   position: relative;
@@ -479,6 +481,47 @@
   to {
     opacity: 1;
   }
+}
+/* ============== Shopping ================ */
+.shopping-container {
+width: 20%;
+height: 50%;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); /*выравниваем по центру */
+margin: auto;
+padding: 20px 20px 20px 50px;
+background-color: rgb(255, 255, 255);
+/* box-shadow: var(--box-shadow); */
+border: 1px solid #000;
+}
+.shopping-element_name {
+padding: 15px;
+font-weight: bold;
+}
+.shopping-element_price {
+padding: 15px;
+color: #7e817af8;
+}
+
+.shopping-element_price2 {
+font-weight: bold;
+color:rgb(35, 11, 252);
+font-size: 18px;
+
+}
+.shoping__close {
+position: absolute;
+width: 25px; 
+height: 25px; 
+top: 20px;
+right: 20px;
+background-image: url(/DreamJob/image/close.svg);
+background-repeat: no-repeat;
+background-position: center center;
+background-size: contain;
+cursor: pointer;  
 }
 
 /* ============== @media ================ */
