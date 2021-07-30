@@ -295,7 +295,7 @@ let prices = document.querySelectorAll(".main_cart_price_price");
                 <tr>
                      <td class="shopping-element_name">🌟 ${nameCart}:</td>
                      <td class="shopping-element_price">${sumCar} РУБ</td>
-                     <td class="shopping-element_sum">(${SumCountCart} шт.)</td>
+                     <td class="shopping-element_sum">${SumCountCart} шт.</td>
 
                 </tr>
                 `;

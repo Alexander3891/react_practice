@@ -484,7 +484,7 @@
 }
 /* ============== Shopping ================ */
 .shopping-container {
-width: 20%;
+width: 25%;
 height: auto;
 position: fixed;
 top: 50%;
@@ -523,8 +523,15 @@ background-position: center center;
 background-size: contain;
 cursor: pointer;  
 }
+.shopping-element_sum{
+  font-weight: bold;
+  color:rgba(96, 95, 97, 0.911);
+  font-size: 14px;
+/* border: 1px #615d5d solid ; */
+padding: 5px;
+}
 .shopping-element_clear{
-margin: 10px 0px 0px 90px;
+margin: 15px 0px 0px 90px;
 font-weight: bold;
 color:rgba(96, 95, 97, 0.911);
 font-size: 16px;
@@ -602,6 +609,19 @@ font-size: 16px;
     margin-left: 15px;
     margin-right: 15px;
   }
+  .shopping-container {
+    width: 40%;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*выравниваем по центру */
+    margin: auto;
+    padding: 20px 20px 20px 50px;
+    background-color: rgb(255, 255, 255);
+    /* box-shadow: var(--box-shadow); */
+    border: 1px solid #000;
+    }
 }
 @media (max-width: 900px) {
   .header-container {
@@ -737,6 +757,19 @@ font-size: 16px;
   .main {
     margin-top: 130px;
   }
+  .shopping-container {
+    width: 60%;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*выравниваем по центру */
+    margin: auto;
+    padding: 20px 20px 20px 50px;
+    background-color: rgb(255, 255, 255);
+    /* box-shadow: var(--box-shadow); */
+    border: 1px solid #000;
+    }
 }
 
 @media (max-width: 480px) {
