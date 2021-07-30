@@ -75,7 +75,13 @@ let totalPrice = 0,
     SumPricesHeader = [0],
     PrisesCards = [],
     sumArr = 0,
-    htmlCatologs = [];
+    htmlCatologs = [],
+    html = '',
+    nameCart,
+    sumCar = 0,
+    countCart = 0,
+    htmlCatologsClean;
+
 
 
 
@@ -254,6 +260,7 @@ let prices = document.querySelectorAll(".main_cart_price_price");
                 timeSpiner().then(function (done) {
                     spinner = done;
                     item.querySelector('.main_cart_button_buy_calc_spinner').style.display = spinner;
+                shopping()
                 });
                 timeSum().then(function (done) {
                     sum = done;
@@ -278,6 +285,7 @@ let prices = document.querySelectorAll(".main_cart_price_price");
                     item.querySelector('.main_cart_button_buy_calc_sum').style.display = sum;
                 });
             }
+
             item.querySelector('.main_cart_button_buy_button').onclick = () => {
                 onClickBuyButtob()
                    
@@ -285,39 +293,68 @@ let prices = document.querySelectorAll(".main_cart_price_price");
                     
                 htmlCatolog = `
                 <tr>
-                     <td class="shopping-element_name">🌟 ${nams[index].innerText}:</td>
-                     <td class="shopping-element_price">${prices[index].innerText}РУБ</td>
+                     <td class="shopping-element_name">🌟 ${nameCart}:</td>
+                     <td class="shopping-element_price">${sumCar} РУБ</td>
+                     <td class="shopping-element_sum">(${SumCountCart} шт.)</td>
+
                 </tr>
                 `;
-            htmlCatologs.push(htmlCatolog);
+                htmlCatologs[index] = htmlCatolog;
+            
 
             }
+            let htmlCatologsClean = htmlCatologs.join("").split(', ');
 
-            const html = `
+            html = `
         <div class="shopping-container">
-            <div class="shoping__close" onclick="document.querySelector('.main_shopping').innerHTML = '';"></div>
+            <div class="shoping__close" onclick="document.querySelector('.main_shopping').innerHTML = ''"></div>
              <table>
-                  ${htmlCatologs}
+                  ${htmlCatologsClean}
                   <tr>
                      <td class="shopping-element_name">❇️ СУММА</td>
                      <td class="shopping-element_price shopping-element_price2">${sumArr.toLocaleString()} РУБ</td>
                 </tr>       
              </table>
-
+             <button class="shopping-element_clear" onClick="window.location.reload()">Очистить</button>
         </div>
-        `;
+        `; 
             document.querySelector('.basket').onclick = () => {
                 document.querySelector('.main_shopping').innerHTML = html;
       }
            document.querySelector(".basket_quantity").innerHTML = SumProductsHeader;
-           console.log(htmlCatologs);
     });
 
+                     // ========= function =============
+        
+       
 
         let spinner = 'none',
             sum = 'block',
             clicks = 0;
 
+
+        //  ======= function of counting the quantity and sum of prices for each card ====
+        let arrcountCart = [],
+            SumCountCart;
+
+
+        function shopping() {
+            nameCart = nams[index].innerText;
+            countCart = clicks;
+            arrcountCart.push(countCart);
+            SumCountCart = arrcountCart.length;
+            sumCar = SumCountCart * prices[index].innerText;
+
+            console.log(nameCart);
+
+        //     console.log(SumCountCart);
+        //    console.log(sumCar);
+            
+        }
+           console.log(sumCar);
+        // function htmlCatologs22(){
+            // htmlCatologs2 = htmlCatologs.spite(', ');
+        // }
         function onClickSpiner() {
             spinner = 'block',
                 sum = 'none';
@@ -361,14 +398,15 @@ let prices = document.querySelectorAll(".main_cart_price_price");
             CreateProducts();
         }
         function CreateProducts() {
+            //after click buyButtn create count clicks in arr arrSumProducts 
             arrSumProducts.push(arrSumProduct);
             CreateProductsHeader();
         }
-        //  console.log(arrSumProducts);
         const cardsPrices = document.querySelectorAll(".main_cart_price_price");
         
-let htmlCatolog = '';
+          let htmlCatolog = '';
         function CreateProductsHeader() {
+            // sum up count clicks after click all buyButtn  
             SumProductsHeader = arrSumProducts.reduce(function (a, b) {
                 return a + b;
             });
